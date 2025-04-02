@@ -42,9 +42,8 @@ export default async function Blog({ searchParams }) {
                 От нашия блог
               </h1>
               <p className="mt-6 text-lg/8 text-white">
-                Актуални правни анализи, експертни мнения и ценни съвети –
-                всичко, което трябва да знаете, за да сте информирани и
-                защитени.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
             <svg
