@@ -34,8 +34,8 @@ export default function LazyImageObserver() {
       // Търсим LCP изображенията според viewport размера
       const isMobile = window.innerWidth <= 640;
       const targetSelector = isMobile
-        ? 'img[src="/lawyer-mobile-lcp.webp"]'
-        : 'img[src="/lawyer-desktop-lcp.webp"]';
+        ? 'img[src="/hero-image-mobile.jpg"]'
+        : 'img[src="/hero-image-desktop.jpg"]';
 
       const targetImage = document.querySelector(targetSelector);
 

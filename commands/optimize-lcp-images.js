@@ -16,8 +16,8 @@ const MOBILE_IMAGE = path.join(PUBLIC_DIR, "lawyer-mobile.webp");
 const DESKTOP_IMAGE = path.join(PUBLIC_DIR, "lawyer-desktop.webp");
 
 // Нови пътища - без да заменяме оригиналните
-const MOBILE_OPTIMIZED = path.join(PUBLIC_DIR, "lawyer-mobile-lcp.webp");
-const DESKTOP_OPTIMIZED = path.join(PUBLIC_DIR, "lawyer-desktop-lcp.webp");
+const MOBILE_OPTIMIZED = path.join(PUBLIC_DIR, "hero-image-mobile.jpg");
+const DESKTOP_OPTIMIZED = path.join(PUBLIC_DIR, "hero-image-desktop.jpg");
 
 async function optimizeLCPImages() {
   console.log("Започва допълнителна оптимизация на LCP изображения...");
@@ -85,7 +85,7 @@ async function optimizeLCPImages() {
         ).toFixed(2)}%`
       );
       console.log(
-        `Новото оптимизирано изображение е записано като: lawyer-desktop-lcp.webp`
+        `Новото оптимизирано изображение е записано като: hero-image-desktop.jpg`
       );
     } else {
       console.warn("Не е намерен десктоп файл за оптимизация!");
@@ -96,8 +96,8 @@ async function optimizeLCPImages() {
     console.log(
       "2. За да ги използвате, моля, актуализирайте компонентите в кода да сочат към:"
     );
-    console.log("   - /lawyer-mobile-lcp.webp (за мобилни)");
-    console.log("   - /lawyer-desktop-lcp.webp (за десктоп)");
+    console.log("   - /hero-image-mobile.jpg (за мобилни)");
+    console.log("   - /hero-image-desktop.jpg (за десктоп)");
 
     console.log("\nОптимизацията приключи успешно!");
   } catch (error) {

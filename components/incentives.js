@@ -41,7 +41,7 @@ export default function Incentives() {
             </div>
             <img
               alt=""
-              src="/incentives-hero-image.jpg"
+              src="/menu-hero-image.jpg"
               className="aspect-3/2 w-full rounded-lg bg-gray-100 object-cover"
             />
           </div>

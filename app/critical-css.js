@@ -10,8 +10,8 @@ export function CriticalCSS() {
           
           /* Prefetch за LCP изображение - скрива оригиналното изображение, докато се зарежда */
           img[fetchPriority="high"] {content-visibility:auto;}
-          @media (max-width:640px){img[src="/lawyer-mobile-lcp.webp"]{content-visibility:auto;contain-intrinsic-size:640px 400px;}}
-          @media (min-width:641px){img[src="/lawyer-desktop-lcp.webp"]{content-visibility:auto;contain-intrinsic-size:955px 776px;}}
+          @media (max-width:640px){img[src="/hero-image-mobile.jpg"]{content-visibility:auto;contain-intrinsic-size:640px 400px;}}
+          @media (min-width:641px){img[src="/hero-image-desktop.jpg"]{content-visibility:auto;contain-intrinsic-size:955px 776px;}}
         `,
       }}
     />

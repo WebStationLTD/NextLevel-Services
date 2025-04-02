@@ -78,9 +78,9 @@ export default function RootLayout({ children }) {
         {/* Предварително зареждане на мобилната версия на LCP изображението */}
         <link
           rel="preload"
-          href="/lawyer-mobile-lcp.webp"
+          href="/hero-image-mobile.jpg"
           as="image"
-          type="image/webp"
+          type="image/jpg"
           fetchPriority="high"
           importance="high"
           media="(max-width: 640px)"
@@ -89,9 +89,9 @@ export default function RootLayout({ children }) {
         {/* Предварително зареждане на десктоп версията на LCP изображението */}
         <link
           rel="preload"
-          href="/lawyer-desktop-lcp.webp"
+          href="/hero-image-desktop.jpg"
           as="image"
-          type="image/webp"
+          type="image/jpg"
           fetchPriority="high"
           importance="high"
           media="(min-width: 641px)"

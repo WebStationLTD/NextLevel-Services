@@ -15,9 +15,9 @@ export default function Hero() {
         <link
           rel="preload"
           as="image"
-          href="/lawyer-mobile-lcp.webp"
+          href="/hero-image-mobile.jpg"
           media="(max-width: 640px)"
-          type="image/webp"
+          type="image/jpg"
         />
       </Head>
       <LazyImageObserver />
@@ -27,7 +27,7 @@ export default function Hero() {
           <div className="w-full">
             {/* Директно използване на HTML img за максимална производителност на LCP */}
             <img
-              src="/lawyer-mobile-lcp.webp"
+              src="/hero-image-mobile.jpg"
               width={640}
               height={400}
               alt=""
@@ -60,7 +60,7 @@ export default function Hero() {
                 href="/services"
                 className="rounded-md bg-[#129160] hover:bg-gray-300 hover:text-[#000000] px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Сфери на дейност
+                Услуги
               </Link>
               <Link
                 href="/contact"
@@ -135,7 +135,7 @@ export default function Hero() {
           <div className="bg-gray-50 absolute inset-y-0 right-0 w-1/2">
             {/* Директно използване на HTML img за десктоп версията */}
             <img
-              src="/lawyer-desktop-lcp.webp"
+              src="/hero-image-desktop.jpg"
               width={955}
               height={776}
               alt=""

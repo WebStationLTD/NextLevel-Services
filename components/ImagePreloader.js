@@ -4,8 +4,8 @@ import { useEffect } from "react";
 
 // Списък с изображения, които трябва да се заредят предварително
 const CRITICAL_IMAGES = [
-  "/lawyer-mobile-lcp.webp", // Hero изображение - мобилна версия
-  "/lawyer-desktop-lcp.webp", // Hero изображение - десктоп версия
+  "/hero-image-mobile.jpg", // Hero изображение - мобилна версия
+  "/hero-image-desktop.jpg", // Hero изображение - десктоп версия
 ];
 
 /**
