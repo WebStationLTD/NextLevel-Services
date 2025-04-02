@@ -39,14 +39,14 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "https://www.facebook.com/brd.law.bg",
+      href: "https://www.facebook.com/example",
       icon: FaFacebook,
       target: "_blank",
       rel: "noopener noreferrer",
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/-burkov-radev-djulgerska-law-firm/?viewAsMember=true",
+      href: "https://www.linkedin.com/example",
       icon: FaLinkedin,
       target: "_blank",
       rel: "noopener noreferrer",
@@ -87,20 +87,20 @@ export default function Footer() {
         >
           <path
             d="M80 0 C160 150, 340 250, 420 400 S480 600, 350 800"
-            stroke="#95161C"
+            stroke="#129160"
             strokeWidth="1.5"
             fill="none"
           />
           <path
             d="M140 0 C180 170, 320 270, 440 420 S500 650, 320 800"
-            stroke="#95161C"
+            stroke="#129160"
             strokeWidth="1.2"
             opacity="0.8"
             fill="none"
           />
           <path
             d="M200 0 C200 190, 300 290, 460 440 S520 700, 290 800"
-            stroke="#95161C"
+            stroke="#129160"
             strokeWidth="1"
             opacity="0.6"
             fill="none"
@@ -110,20 +110,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
-            <img
-              alt="Адвокатско дружество Бурков, Радев, Дюлгерска"
-              src="/brd-logo.svg"
-              className="w-full"
-            />
-            {/* <div className="mt-8 text-lg">
-              <p className="text-[1.675rem]">АДВОКАТСКО ДРУЖЕСТВО</p>
-              <p className="text-[1.475rem]">Бурков, Радев, Дюлгерска</p>
-              <p
-                className={`${pacifico.className} text-[1.475rem] text-[#95161C]`}
-              >
-                в защита на вашите интереси
-              </p>
-            </div> */}
+            <img alt="" src="/next-level-logo.svg" className="w-full" />
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -210,7 +197,7 @@ export default function Footer() {
           </div>
           {loading && (
             <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 z-10 pointer-events-none">
-              <div className="w-12 h-12 border-4 border-gray-400 border-t-[#95161C] rounded-full animate-spin"></div>
+              <div className="w-12 h-12 border-4 border-gray-400 border-t-[#129160] rounded-full animate-spin"></div>
             </div>
           )}
           <form
@@ -236,7 +223,7 @@ export default function Footer() {
             <div className="mt-4 sm:mt-0 sm:ml-4 sm:shrink-0">
               <button
                 type="submit"
-                className="flex w-full items-center justify-center rounded-md bg-[#95161C] hover:bg-gray-300 cursor-pointer hover:text-[#000000] px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="flex w-full items-center justify-center rounded-md bg-[#129160] hover:bg-gray-300 cursor-pointer hover:text-[#000000] px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Абонирайте се
               </button>
@@ -259,7 +246,7 @@ export default function Footer() {
             ))}
           </div>
           <p className="mt-8 text-sm/6 text-gray-600 md:order-1 md:mt-0">
-            &copy; {year} BRD, Inc. All rights reserved.
+            &copy; {year} NextLevel Theme, Inc. All rights reserved.
           </p>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function Hero() {
               src="/lawyer-mobile-lcp.webp"
               width={640}
               height={400}
-              alt="Адвокатско дружество Бурков, Радев, Дюлгерска"
+              alt=""
               className="w-full h-auto object-cover aspect-[4/3]"
               fetchPriority="high"
               decoding="async"
@@ -41,23 +41,24 @@ export default function Hero() {
 
           <div className="px-6 py-10">
             <h1 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 font-display">
-              "Бурков, Радев, Дюлгерска"
+              "Lorem ipsum dolor sit amet"
             </h1>
             <p className="mt-4 text-2xl font-medium font-display">
-              Адвокатско дружество
+              Lorem ipsum dolor sit amet
             </p>
             <p className="mt-6 text-sm font-medium text-pretty text-gray-500 font-display">
-              Кантората е основана през 2016 г., обединявайки екип от
-              професионалисти с дългогодишен опит. Предоставяме на своите
-              клиенти всеобхватно правно обслужване в следните области на
-              правото: вещно право, семейно и наследствено право, облигационно
-              право, трудово право, търговско право, право на интелектуална
-              собственост, реклама и медии, граждански и административен процес.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </p>
             <div className="mt-8 flex items-center gap-x-4">
               <Link
                 href="/services"
-                className="rounded-md bg-[#95161C] hover:bg-gray-300 hover:text-[#000000] px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-[#129160] hover:bg-gray-300 hover:text-[#000000] px-3 py-2 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Сфери на дейност
               </Link>
@@ -90,7 +91,7 @@ export default function Hero() {
                       Полезни статии и новини от нашия блог.{" "}
                       <Link
                         href="/blog"
-                        className="font-semibold whitespace-nowrap text-[#95161C]"
+                        className="font-semibold whitespace-nowrap text-[#129160]"
                       >
                         <span aria-hidden="true" className="absolute inset-0" />
                         Вижте повече <span aria-hidden="true">&rarr;</span>
@@ -98,26 +99,27 @@ export default function Hero() {
                     </div>
                   </div>
                   <h1 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl font-display">
-                    "Бурков, Радев, Дюлгерска"
+                    "Lorem ipsum dolor sit amet"
                   </h1>
                   <p className="mt-8 text-4xl font-medium font-display">
-                    Адвокатско дружество
+                    Lorem ipsum
                   </p>
                   <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8 font-display">
-                    Кантората е основана през 2016 г., обединявайки екип от
-                    професионалисти с дългогодишен опит. Предоставяме на своите
-                    клиенти всеобхватно правно обслужване в следните области на
-                    правото: вещно право, семейно и наследствено право,
-                    облигационно право, трудово право, търговско право, право на
-                    интелектуална собственост, реклама и медии, граждански и
-                    административен процес.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
                   </p>
                   <div className="mt-10 flex items-center gap-x-6">
                     <Link
                       href="/services"
-                      className="rounded-md bg-[#95161C] hover:bg-gray-300 hover:text-[#000000] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                      className="rounded-md bg-[#129160] hover:bg-gray-300 hover:text-[#000000] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     >
-                      Сфери на дейност
+                      Услуги
                     </Link>
                     <Link
                       href="/contact"
@@ -136,7 +138,7 @@ export default function Hero() {
               src="/lawyer-desktop-lcp.webp"
               width={955}
               height={776}
-              alt="Адвокатско дружество Бурков, Радев, Дюлгерска"
+              alt=""
               className="h-full w-full object-cover"
               fetchPriority="high"
               decoding="async"

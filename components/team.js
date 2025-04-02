@@ -23,21 +23,16 @@ export default function Team() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-8xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl text-center">
-            Нашият екип
+            Lorem ipsum
           </h2>
           <p className="mt-6 text-lg/8 text-gray-600 text-center">
-            Екипът на Адвокатско дружество „Бурков, Радев, Дюлгерска" съчетава
-            по уникален начин опита, креативността, постоянството и жаждата за
-            знания. Кантората предлага на своите клиенти всеобхватно правно
-            обслужване, в това число и по въпроси, свързани с облигационното,
-            вещното, семейното и наследственото право, търговското и трудовото
-            право, правото на интелектуална собственост, гражданския и
-            административния процес. Нашите адвокати притежават богат опит при
-            консултирането на някои от най-новите и бързоразвиващи сфери на
-            бизнеса, каквито са: медиите (телевизия, радио и интернет),
-            телекомуникациите, маркетинга и рекламата, създаването на
-            съдържание, новите технологии и др. Работни езици: български,
-            английски, сръбски, руски, немски.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
         <ul

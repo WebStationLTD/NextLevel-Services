@@ -1,21 +1,21 @@
 const incentives = [
   {
-    name: "Експертиза",
+    name: "Lorem ipsum 1",
     imageSrc: "/icons/lawyer-1.svg",
     description:
-      "Експертиза в различни области на правото, позволяваща на клиентите да получат всеобхватно обслужване.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    name: "Индивидуален подход",
+    name: "Lorem ipsum 2",
     imageSrc: "/icons/lawyer-2.svg",
     description:
-      "Прилагаме индивидуален подход спрямо специфичните нужди на всеки клиент.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
-    name: "Дългосрочни партньорства",
+    name: "Lorem ipsum 3",
     imageSrc: "/icons/lawyer-3.svg",
     description:
-      "Градим дългосрочни партньорства, основани на доверие и професионализъм.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
 ];
 
@@ -27,20 +27,16 @@ export default function Incentives() {
           <div className="grid grid-cols-1 items-center gap-x-16 gap-y-10 lg:grid-cols-2">
             <div>
               <h2 className="text-4xl font-bold tracking-tight text-white">
-                Мисия и принципи
+                Lorem ipsum
               </h2>
               <p className="mt-4 text-white">
-                Вярваме, че доверието, е в основата на успешния бизнес.
-                Дългогодишните партньорства са нашият най-ценен актив. Чрез
-                професионално отношение и детайлно запознаване с потребностите
-                на своите клиенти, ние се стремим да им предоставяме правна
-                сигурност.
-              </p>
-              <p className="mt-4 text-white">
-                Привърженици сме на работата в екип. Обединяваме знанията и
-                личния си опит и разглеждаме всеки конкретен случай от различни
-                аспекти, като по този начин предоставяме на своите клиенти верни
-                и практически ориентирани решения.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
             <img
@@ -53,7 +49,7 @@ export default function Incentives() {
             {incentives.map((incentive) => (
               <div key={incentive.name} className="sm:flex lg:block">
                 <div className="sm:shrink-0">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#95161C]">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#129160]">
                     <img
                       alt=""
                       src={incentive.imageSrc}

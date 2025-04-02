@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Блог - Адвокатско дружество „Бурков, Радев, Дюлгерска“",
+  title: "Блог - NextLevel Theme",
   description:
-    "Открийте актуални правни анализи, експертни съвети и новини в блога на Адвокатско дружество „Бурков, Радев, Дюлгерска“. Следете последните тенденции в правото, бизнеса и технологиите.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 };
 
 export default async function Blog({ searchParams }) {
@@ -14,7 +14,7 @@ export default async function Blog({ searchParams }) {
 
   // Fetch posts from WordPress API with caching enabled
   const response = await fetch(
-    `https://brd.devclick.net/wp-json/wp/v2/posts?page=${currentPage}&per_page=${perPage}&_fields=id,yoast_head_json,date,slug,title,content`,
+    `https://nextlevel.rosset.website/wp-json/wp/v2/posts?page=${currentPage}&per_page=${perPage}&_fields=id,yoast_head_json,date,slug,title,content`,
     {
       next: { revalidate: 120 },
     }
@@ -61,8 +61,8 @@ export default async function Blog({ searchParams }) {
               />
               <defs>
                 <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
-                  <stop stopColor="#95161C" />
-                  <stop offset={1} stopColor="#95161C" />
+                  <stop stopColor="#129160" />
+                  <stop offset={1} stopColor="#129160" />
                 </radialGradient>
               </defs>
             </svg>

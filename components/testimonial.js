@@ -6,15 +6,7 @@ export default function Testimonial() {
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <figure>
           <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
-            <p>
-              “Едно добре подбрано изречение в съдебната зала може да бъде
-              по-силно от хиляди страници доказателства.”
-            </p>
-            <p>
-              “Човек е свободен само тогава, когато не му се налага да се
-              подчинява на никого, освен на закона.”
-            </p>
-            <p>“Човек, който е свой собствен адвокат, има глупак за клиент.”</p>
+            <p>“Уебсайт без SEO е като кола без бензин.”</p>
           </blockquote>
         </figure>
       </div>

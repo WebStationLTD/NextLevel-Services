@@ -11,18 +11,18 @@ export const getMembers = async () => {
 
   return fetchedMembers.map((member) => ({
     id: member.id,
-    name: member.acf.name,
-    position: member.acf.position,
-    description: member.acf.description,
-    phonenumber: member.acf.phonenumber,
-    email: member.acf.email,
+    name: member.acf?.name || "",
+    position: member.acf?.position || "",
+    description: member.acf?.description || "",
+    phonenumber: member.acf?.phonenumber || "",
+    email: member.acf?.email || "",
     linkedin: {
-      title: member.acf.linkedin.title,
-      url: member.acf.linkedin.url,
-      target: member.acf.linkedin.target,
+      title: member.acf?.linkedin?.title || "",
+      url: member.acf?.linkedin?.url || "",
+      target: member.acf?.linkedin?.target || "_blank",
     },
     slug: member.slug,
-    profilepircture: member.acf.profilepircture,
+    profilepircture: member.acf?.profilepircture || "/placeholder.webp",
   }));
 };
 

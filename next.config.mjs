@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "brd.devclick.net",
+        hostname: "nextlevel.rosset.website",
       },
       {
         protocol: "https",

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getMembers } from "../../services/members";
 
 export const metadata = {
-  title: "Екип - Адвокатско дружество „Бурков, Радев, Дюлгерска“",
+  title: "Екип - NextLevel Theme",
   description:
-    "Нашите адвокати разполагат с богат опит в правното консултиране на медии, телекомуникации, маркетинг, реклама, съдържание и нови технологии, осигурявайки експертна правна подкрепа и иновативни решения.",
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 };
 
 export default async function Team() {
@@ -22,12 +22,11 @@ export default async function Team() {
           <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-12 text-center shadow-2xl sm:px-12">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                Нашият екип
+                Lorem ipsum dolor sit amet
               </h1>
               <p className="mt-6  text-lg/8 text-white">
-                Нашиите адвокати има богат опит в консултирането на медии,
-                телекомуникации, маркетинг, реклама, съдържание и нови
-                технологии.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
             </div>
             <svg
@@ -44,8 +43,8 @@ export default async function Team() {
               />
               <defs>
                 <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
-                  <stop stopColor="#95161C" />
-                  <stop offset={1} stopColor="#95161C" />
+                  <stop stopColor="#129160" />
+                  <stop offset={1} stopColor="#129160" />
                 </radialGradient>
               </defs>
             </svg>
@@ -59,19 +58,17 @@ export default async function Team() {
               За екипа
             </h2>
             <p className="mt-6 text-lg/8 text-gray-600">
-              Екипът на Адвокатско дружество „Бурков, Радев, Дюлгерска“ съчетава
-              по уникален начин опита, креативността, постоянството и жаждата за
-              знания.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <p className="mt-6 text-lg/8 text-gray-600">
-              Предоставяме всеобхватно правно обслужване на физически и
-              юридически лица в следните области на правото: вещно право,
-              семейно и наследствено право, облигационно право, трудово право,
-              търговско право, право на интелектуална собственост, реклама и
-              медии, граждански и административен процес.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <p className="mt-6 text-lg/8 text-gray-600">
-              Работни езици: български, английски, сръбски, руски, немски.
+              Lorem ipsum dolor sit amet!
             </p>
           </div>
           <ul role="list" className="divide-y divide-gray-200 xl:col-span-3">

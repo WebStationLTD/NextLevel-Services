@@ -6,9 +6,9 @@ import { getServices } from "../../services/services";
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Услуги - Адвокатско дружество "Бурков, Радев, Дюлгерска"',
+  title: "Услуги - NextLevel Theme",
   description:
-    'Разгледайте правните услуги, които предлага Адвокатско дружество "Бурков, Радев, Дюлгерска". Специализираме в търговско, гражданско, наказателно и административно право, като осигуряваме експертни решения и индивидуален подход към всеки клиент.',
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 };
 
 export default async function Services() {
@@ -50,8 +50,8 @@ export default async function Services() {
                 />
                 <defs>
                   <radialGradient id="827591b1-ce8c-4110-b064-7cb85a0b1217">
-                    <stop stopColor="#95161C" />
-                    <stop offset={1} stopColor="#95161C" />
+                    <stop stopColor="#129160" />
+                    <stop offset={1} stopColor="#129160" />
                   </radialGradient>
                 </defs>
               </svg>

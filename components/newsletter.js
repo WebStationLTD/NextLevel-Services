@@ -22,12 +22,12 @@ export default function Newsletter() {
               Абонирайте се за нашия бюлетин
             </h2>
             <p className="mt-4 text-lg text-gray-300">
-              Получавайте ценни правни съвети, анализи и актуални новини
-              директно във вашата поща.
+              Получавайте ценни съвети, анализи и актуални новини директно във
+              вашата поща.
             </p>
             {loading && (
               <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 z-10 pointer-events-none">
-                <div className="w-12 h-12 border-4 border-gray-400 border-t-[#95161C] rounded-full animate-spin"></div>
+                <div className="w-12 h-12 border-4 border-gray-400 border-t-[#129160] rounded-full animate-spin"></div>
               </div>
             )}
             <form
@@ -52,7 +52,7 @@ export default function Newsletter() {
               />
               <button
                 type="submit"
-                className="flex-none rounded-md bg-[#95161C] hover:bg-gray-300 cursor-pointer hover:text-[#000000] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className="flex-none rounded-md bg-[#129160] hover:bg-gray-300 cursor-pointer hover:text-[#000000] px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
                 Абонирайте се
               </button>
@@ -102,7 +102,7 @@ export default function Newsletter() {
             clipPath:
               "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
           }}
-          className="aspect-1155/678 w-[72.1875rem] bg-linear-to-tr from-[#95161C] to-[#a93136] opacity-40"
+          className="aspect-1155/678 w-[72.1875rem] bg-linear-to-tr from-[#129160] to-[#a93136] opacity-40"
         />
       </div>
     </div>

@@ -30,7 +30,6 @@ export default function Navigation() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showResults, setShowResults] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const searchRef = useRef(null);
   const [navigation, setNavigation] = useState({
     categories: [
@@ -127,22 +126,6 @@ export default function Navigation() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      if (scrollTop > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div className="bg-white sticky shadow-md top-0 block w-full z-50">
       {/* Mobile menu */}
@@ -168,8 +151,8 @@ export default function Navigation() {
               </button>
               <div className="ml-4">
                 <Image
-                  src="/brd_menu_logo.png"
-                  alt="BRD Law Logo"
+                  src="/next-level-logo.svg"
+                  alt=""
                   width={120}
                   height={40}
                   className="h-10 w-auto"
@@ -197,7 +180,7 @@ export default function Navigation() {
                   {navigation.categories.map((category) => (
                     <Tab
                       key={category.name}
-                      className="flex-1 border-b-2 border-transparent px-1 py-4 text-xl font-bold text-center text-gray-900 hover:text-[#95161C] data-headlessui-state-selected:border-[#95161C] data-headlessui-state-selected:text-[#95161C]"
+                      className="flex-1 border-b-2 border-transparent px-1 py-4 text-xl font-bold text-center text-gray-900 hover:text-[#129160] data-headlessui-state-selected:border-[#129160] data-headlessui-state-selected:text-[#129160]"
                     >
                       {category.name}
                     </Tab>
@@ -207,7 +190,7 @@ export default function Navigation() {
               {/* Loader */}
               {loading && (
                 <div className="flex justify-center py-10">
-                  <div className="w-12 h-12 border-4 border-gray-500 border-t-[#95161C] rounded-full animate-spin"></div>
+                  <div className="w-12 h-12 border-4 border-gray-500 border-t-[#129160] rounded-full animate-spin"></div>
                 </div>
               )}
               {!loading && (
@@ -247,11 +230,7 @@ export default function Navigation() {
       <header className="relative bg-white">
         <nav aria-label="Top" className="mx-auto w-full px-4 sm:px-6 lg:px-8">
           <div className="border-b border-gray-200">
-            <div
-              className={`flex items-center justify-between ${
-                isScrolled ? "h-16 lg:h-16" : "h-16 lg:h-28"
-              }`}
-            >
+            <div className="flex items-center justify-between h-16 lg:h-16">
               {/* Mobile menu button - запазваме мобилната версия непроменена */}
               <button
                 type="button"
@@ -266,26 +245,13 @@ export default function Navigation() {
               {/* Секция 1: Лого */}
               <div className="w-1/4 lg:w-1/5 flex items-center justify-start">
                 <Link href="/" className="block">
-                  <span className="sr-only">BRD</span>
-                  {/* Мобилно лого - винаги малко */}
-                  <Image
-                    width={40}
-                    height={40}
-                    alt=""
-                    src="/brd_menu_logo.png"
-                    className="h-10 w-auto lg:hidden"
-                  />
-                  {/* Десктоп лого - променя се при скрол */}
+                  <span className="sr-only">NextLevel Theme</span>
                   <Image
                     width={385}
                     height={106}
                     alt=""
-                    src={isScrolled ? "/brd_menu_logo.png" : "/brd-logo.svg"}
-                    className="hidden lg:block transition-all duration-300 ease-in-out"
-                    style={{
-                      height: isScrolled ? "40px" : "112px",
-                      width: "auto",
-                    }}
+                    src="/next-level-logo.svg"
+                    className="h-10 w-auto transition-all duration-300 ease-in-out"
                   />
                 </Link>
               </div>
@@ -298,9 +264,7 @@ export default function Navigation() {
                       <Link
                         key={page.name}
                         href={page.href}
-                        className={`flex items-center font-medium text-gray-700 hover:text-gray-800 ${
-                          isScrolled ? "text-base" : "text-lg"
-                        }`}
+                        className="flex items-center font-medium text-gray-700 hover:text-gray-800 text-base"
                         prefetch={true}
                       >
                         {page.name}
@@ -311,11 +275,7 @@ export default function Navigation() {
                         {({ open, close }) => (
                           <>
                             <div className="relative flex">
-                              <PopoverButton
-                                className={`relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-open:border-[#95161C] data-open:text-[#95161C] cursor-pointer focus-visible:outline-none transition-all ${
-                                  isScrolled ? "text-base" : "text-lg"
-                                }`}
-                              >
+                              <PopoverButton className="relative z-10 -mb-px flex items-center border-b-2 border-transparent pt-px font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-open:border-[#129160] data-open:text-[#129160] cursor-pointer focus-visible:outline-none transition-all text-base">
                                 {category.name}
                                 <ChevronDownIcon
                                   className={`ml-2 h-5 w-5 text-gray-500 transition-transform duration-200 ease-in-out ${
@@ -337,7 +297,7 @@ export default function Navigation() {
                                   {/* Loader */}
                                   {loading && (
                                     <div className="flex justify-center py-10">
-                                      <div className="w-12 h-12 border-4 border-gray-500 border-t-[#95161C] rounded-full animate-spin"></div>
+                                      <div className="w-12 h-12 border-4 border-gray-500 border-t-[#129160] rounded-full animate-spin"></div>
                                     </div>
                                   )}
                                   {!loading && (
@@ -347,7 +307,7 @@ export default function Navigation() {
                                           <Image
                                             width={560}
                                             height={560}
-                                            alt="BRD Law Services"
+                                            alt=""
                                             src="/incentives-hero-image.jpg"
                                             className="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                                           />
@@ -368,7 +328,7 @@ export default function Navigation() {
                                               prefetch={true}
                                               onClick={close}
                                             >
-                                              <p className="text-lg font-semibold text-gray-900 transition-colors duration-300 hover:text-[#95161C]">
+                                              <p className="text-lg font-semibold text-gray-900 transition-colors duration-300 hover:text-[#129160]">
                                                 {service.name}
                                               </p>
                                             </Link>
@@ -379,7 +339,6 @@ export default function Navigation() {
                                   )}
                                 </div>
                               </div>
-                              )
                             </PopoverPanel>
                           </>
                         )}
@@ -408,7 +367,7 @@ export default function Navigation() {
                         setShowResults(true);
                       }
                     }}
-                    className="block w-full px-3 pr-10 text-gray-900 placeholder:text-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#95161C] py-1 text-sm sm:text-base lg:text-base"
+                    className="block w-full px-3 pr-10 text-gray-900 placeholder:text-gray-400 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#129160] py-1 text-sm sm:text-base lg:text-base"
                   />
                   <MagnifyingGlassIcon className="absolute right-2 top-1/2 text-gray-500 -translate-y-1/2 h-5 w-5" />
                 </div>
@@ -432,7 +391,7 @@ export default function Navigation() {
                           >
                             <Link
                               href={`/${result.type}/${result.slug}`}
-                              className="block w-full h-full p-1 sm:p-2 text-gray-900 hover:text-[#95161C]"
+                              className="block w-full h-full p-1 sm:p-2 text-gray-900 hover:text-[#129160]"
                               prefetch={true}
                             >
                               {result.title}

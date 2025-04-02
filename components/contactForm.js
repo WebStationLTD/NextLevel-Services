@@ -4,7 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const URL_FORM =
-  "https://brd.devclick.net/wp-json/contact-form-7/v1/contact-forms/43/feedback";
+  "https://nextlevel.rosset.website/wp-json/contact-form-7/v1/contact-forms/43/feedback";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState({});
@@ -75,7 +75,7 @@ export default function ContactForm() {
     <div className="relative">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-opacity-50 z-10 pointer-events-none">
-          <div className="w-12 h-12 border-4 border-gray-400 border-t-[#95161C] rounded-full animate-spin"></div>
+          <div className="w-12 h-12 border-4 border-gray-400 border-t-[#129160] rounded-full animate-spin"></div>
         </div>
       )}
       <form
@@ -194,7 +194,7 @@ export default function ContactForm() {
           <div className="mt-8 flex justify-end">
             <button
               type="submit"
-              className="rounded-md bg-[#95161c] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-gray-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-[#129160] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-gray-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               disabled={loading}
             >
               Изпрати запитване

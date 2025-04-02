@@ -34,7 +34,7 @@ const CookieConsentBanner = () => {
         borderRadius: "6px",
       }}
       declineButtonStyle={{
-        backgroundColor: "#95161C",
+        backgroundColor: "#129160",
         color: "#FFF",
         fontSize: "14px",
         padding: "8px 16px",

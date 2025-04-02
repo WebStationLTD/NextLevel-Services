@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://brd.devclick.net/wp-json/wp/v2";
+const API_BASE_URL = "https://nextlevel.rosset.website/wp-json/wp/v2";
 import { cache } from "react";
 
 /**

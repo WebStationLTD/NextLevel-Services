@@ -25,22 +25,22 @@ export async function generateMetadata() {
 
   return {
     metadataBase: new URL(`${protocol}://${host}`),
-    title: 'Адвокатско дружество "Бурков, Радев, Дюлгерска"',
+    title: "Lorem ipsum dolor sit amet",
     description:
-      "Вашият доверен правен партньор. Предлагаме висококачествени правни услуги в областта на търговското, гражданското, наказателното и административното право.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     openGraph: {
-      title: 'Адвокатско дружество "Бурков, Радев, Дюлгерска"',
+      title: "Lorem ipsum dolor sit amet",
       description:
-        "Вашият доверен правен партньор. Предлагаме висококачествени правни услуги в областта на търговското, гражданското, наказателното и административното право.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       images: "/lawyer.webp",
       type: "website",
       locale: "bg_BG",
-      siteName: 'Адвокатско дружество "Бурков, Радев, Дюлгерска"',
+      siteName: "NextLevel Theme",
     },
     twitter: {
       card: "summary_large_image",
-      title: 'Адвокатско дружество "Бурков, Радев, Дюлгерска"',
-      description: "Вашият доверен правен партньор",
+      title: "NextLevel Theme",
+      description: "Lorem ipsum dolor sit amet",
       images: ["/lawyer.webp"],
     },
     robots: {
@@ -70,10 +70,10 @@ export default function RootLayout({ children }) {
         <CriticalCSS />
         <link
           rel="preconnect"
-          href="https://brd.devclick.net"
+          href="https://nextlevel.rosset.website"
           crossOrigin="anonymous"
         />
-        <link rel="dns-prefetch" href="https://brd.devclick.net" />
+        <link rel="dns-prefetch" href="https://nextlevel.rosset.website" />
 
         {/* Предварително зареждане на мобилната версия на LCP изображението */}
         <link
@@ -113,10 +113,10 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LegalService",
-              name: 'Адвокатско дружество "Бурков, Радев, Дюлгерска"',
+              name: "Lorem ipsum dolor sit amet",
               description:
-                "Вашият доверен правен партньор. Предлагаме висококачествени правни услуги в областта на търговското, гражданското, наказателното и административното право.",
-              url: "https://brd.bg",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              url: "https://example.bg",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+359XXXXXXXXX",
