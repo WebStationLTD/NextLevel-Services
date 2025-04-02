@@ -42,8 +42,8 @@ export function CriticalCSS() {
             }
           }
           
-          /* Оптимизация за производителност на изображенията */
-          img[fetchPriority="high"] {
+          /* Оптимизация за изображения с приоритетно зареждане */
+          img#hero-mobile-lcp, img#hero-desktop-lcp {
             content-visibility: auto;
           }
           

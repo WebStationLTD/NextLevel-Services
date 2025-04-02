@@ -78,25 +78,22 @@ export default function RootLayout({ children }) {
         />
         <link rel="dns-prefetch" href="https://nextlevel.rosset.website" />
 
-        {/* Предварително зареждане на мобилната версия на LCP изображението */}
+        {/* Директно използване на preload тагове с правилния синтаксис */}
         <link
           rel="preload"
-          href="/hero-image-mobile.jpg"
+          fetchpriority="high"
           as="image"
+          href="/hero-image-mobile.jpg"
           type="image/jpg"
-          fetchPriority="high"
-          importance="high"
           media="(max-width: 640px)"
         />
 
-        {/* Предварително зареждане на десктоп версията на LCP изображението */}
         <link
           rel="preload"
-          href="/hero-image-desktop.jpg"
+          fetchpriority="high"
           as="image"
+          href="/hero-image-desktop.jpg"
           type="image/jpg"
-          fetchPriority="high"
-          importance="high"
           media="(min-width: 641px)"
         />
 

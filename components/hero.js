@@ -16,9 +16,8 @@ export default function Hero() {
               height={400}
               alt="Hero image"
               className="w-full h-auto object-cover aspect-[4/3]"
-              fetchPriority="high"
-              decoding="sync"
               loading="eager"
+              decoding="sync"
               style={{
                 objectFit: "cover",
                 contentVisibility: "auto",
@@ -129,9 +128,8 @@ export default function Hero() {
               height={776}
               alt="Hero image"
               className="h-full w-full object-cover"
-              fetchPriority="high"
-              decoding="sync"
               loading="eager"
+              decoding="sync"
               style={{
                 objectFit: "cover",
                 contentVisibility: "auto",
