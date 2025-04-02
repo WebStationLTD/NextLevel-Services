@@ -22,7 +22,7 @@ export const getMembers = async () => {
       target: member.acf?.linkedin?.target || "_blank",
     },
     slug: member.slug,
-    profilepircture: member.acf?.profilepircture || "/placeholder.webp",
+    profilepicture: member.acf?.profilepicture || "/placeholder.webp",
   }));
 };
 

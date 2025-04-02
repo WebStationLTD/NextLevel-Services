@@ -50,7 +50,7 @@ export default function Team() {
                   priority={index < 3} // Приоритетно зареждане на първите 3 члена
                   loading={index < 3 ? "eager" : "lazy"}
                   alt={member.name}
-                  src={member.profilepircture}
+                  src={member.profilepicture}
                   className="rounded-2xl object-cover"
                   format="webp"
                 />

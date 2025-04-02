@@ -82,7 +82,7 @@ export default async function Team() {
                     width={250}
                     height={375}
                     alt={member.name}
-                    src={member.profilepircture}
+                    src={member.profilepicture}
                     className="rounded-2xl object-cover"
                   />
                 </Link>

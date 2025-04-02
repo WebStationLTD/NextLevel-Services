@@ -63,7 +63,7 @@ export default async function MemberDetails({ params }) {
             height={375}
             priority
             alt={member.name}
-            src={member.profilepircture}
+            src={member.profilepicture}
             className="rounded-2xl object-cover"
           />
           <h2 className="text-xl font-semibold mb-2 mt-4">{member.name}</h2>
