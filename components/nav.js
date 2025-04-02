@@ -151,7 +151,7 @@ export default function Navigation() {
               </button>
               <div className="ml-4">
                 <Image
-                  src="/next-level-logo.svg"
+                  src="/next-level-logo.png"
                   alt=""
                   width={120}
                   height={40}
@@ -250,7 +250,7 @@ export default function Navigation() {
                     width={385}
                     height={106}
                     alt=""
-                    src="/next-level-logo.svg"
+                    src="/next-level-logo.png"
                     className="h-10 w-auto transition-all duration-300 ease-in-out"
                   />
                 </Link>
