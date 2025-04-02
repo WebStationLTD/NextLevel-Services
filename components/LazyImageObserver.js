@@ -24,20 +24,18 @@ export default function LazyImageObserver() {
       // Маркираме атрибут на изображението, че е заредено
       if (targetElement) {
         targetElement.setAttribute("data-lcp-loaded", "true");
+        console.log("LCP изображението е заредено успешно!", targetElement.id);
       }
-
-      console.log("LCP изображението е заредено успешно!");
     };
 
     // Използваме Intersection Observer API за да проверим кога изображението е видимо
     const initIntersectionObserver = () => {
-      // Търсим LCP изображенията според viewport размера
+      // Търсим LCP изображенията според viewport размера и ID
       const isMobile = window.innerWidth <= 640;
-      const targetSelector = isMobile
-        ? 'img[src="/hero-image-mobile.jpg"]'
-        : 'img[src="/hero-image-desktop.jpg"]';
+      const targetId = isMobile ? "hero-mobile-lcp" : "hero-desktop-lcp";
 
-      const targetImage = document.querySelector(targetSelector);
+      // Използваме ID селектори за по-добра производителност
+      const targetImage = document.getElementById(targetId);
 
       if (targetImage && "IntersectionObserver" in window) {
         observerRef.current = new IntersectionObserver(
@@ -55,8 +53,8 @@ export default function LazyImageObserver() {
           },
           {
             root: null,
-            threshold: 0.1, // 10% от изображението да бъде видимо
-            rootMargin: "0px 0px 0px 0px",
+            threshold: 0.01, // 1% от изображението да бъде видимо е достатъчно
+            rootMargin: "0px", // Не добавяме допълнителен марджин
           }
         );
 
@@ -69,13 +67,39 @@ export default function LazyImageObserver() {
           // Добавяме и onload handler за директно изображение
           targetImage.onload = () => reportLCP(targetImage);
         }
+
+        // Алтернативен подход чрез PerformanceObserver за измерване на LCP
+        if ("PerformanceObserver" in window) {
+          const lcpObserver = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+
+            // Регистрираме LCP метрика
+            console.log(
+              "LCP Measurement:",
+              Math.round(lastEntry.startTime),
+              "ms"
+            );
+
+            // Проверяваме дали елементът съвпада с нашия LCP елемент
+            if (lastEntry.element && lastEntry.element.id === targetId) {
+              reportLCP(lastEntry.element);
+              lcpObserver.disconnect();
+            }
+          });
+
+          lcpObserver.observe({
+            entryTypes: ["largest-contentful-paint"],
+            buffered: true,
+          });
+        }
       }
     };
 
-    // Изчакваме малко, за да сме сигурни, че DOM е зареден
+    // Изчакваме минимално, за да бъдем сигурни, че DOM е зареден
     const timer = setTimeout(() => {
       initIntersectionObserver();
-    }, 50);
+    }, 10); // Намаляваме времето за изчакване
 
     // Cleanup при unmount
     return () => {

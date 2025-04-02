@@ -14,56 +14,96 @@ const CRITICAL_IMAGES = [
  */
 export default function ImagePreloader() {
   useEffect(() => {
+    // Оптимизирана версия на функцията за предварително зареждане
     const preloadImages = () => {
-      CRITICAL_IMAGES.forEach((imageSrc) => {
-        // Проверка дали трябва да зареждаме мобилна или десктоп версия
-        const isMobile = window.innerWidth <= 640;
-        if (
-          (isMobile && imageSrc.includes("mobile")) ||
-          (!isMobile && imageSrc.includes("desktop"))
-        ) {
-          // Създаваме нов Image обект
+      // Определяме кое изображение трябва да заредим първо според устройството
+      const isMobile = window.innerWidth <= 640;
+      const priorityImage = isMobile
+        ? "/hero-image-mobile.jpg"
+        : "/hero-image-desktop.jpg";
+
+      // Зареждаме приоритетното изображение първо
+      const loadPriorityImage = () => {
+        const img = new Image();
+        img.fetchPriority = "high";
+        img.importance = "high";
+
+        img.onload = () => {
+          console.log(`Priority image preloaded: ${priorityImage}`);
+
+          // След като приоритетното изображение е заредено, маркираме го
+          if (window.performance && window.performance.mark) {
+            window.performance.mark("priority-image-loaded");
+          }
+
+          // След като приоритетното изображение е заредено, зареждаме останалите
+          loadRemainingImages();
+        };
+
+        img.onerror = () => {
+          console.error(`Failed to preload priority image: ${priorityImage}`);
+          loadRemainingImages(); // При грешка, продължаваме със зареждането на останалите изображения
+        };
+
+        if ("decode" in img) {
+          img.src = priorityImage;
+          img
+            .decode()
+            .then(() => {
+              console.log(`Priority image decoded: ${priorityImage}`);
+            })
+            .catch((err) => {
+              console.warn(
+                `Priority image decode failed: ${priorityImage}`,
+                err
+              );
+            });
+        } else {
+          img.src = priorityImage;
+        }
+      };
+
+      // Зареждаме останалите изображения след приоритетното
+      const loadRemainingImages = () => {
+        CRITICAL_IMAGES.forEach((imageSrc) => {
+          // Пропускаме приоритетното изображение, което вече е заредено
+          if (imageSrc === priorityImage) return;
+
           const img = new Image();
+          img.importance = "low";
 
-          // Важно: добавяме onload handler преди да зададем src
           img.onload = () => {
-            console.log(`Image preloaded: ${imageSrc}`);
-            // Маркираме, че LCP изображението е заредено
-            if (window.performance && window.performance.mark) {
-              window.performance.mark("lcp-image-loaded");
-            }
+            console.log(`Secondary image preloaded: ${imageSrc}`);
           };
 
-          img.onerror = () => {
-            console.error(`Failed to preload: ${imageSrc}`);
-          };
-
-          // Задаваме fetchPriority атрибут
-          img.fetchPriority = "high";
-
-          // Добавяме декодиране за оптимизирано рендериране
           if ("decode" in img) {
             img.src = imageSrc;
-            img.decode().catch(() => {
-              console.warn(`Image decode failed: ${imageSrc}`);
-            });
+            img.decode().catch(() => {});
           } else {
-            // Fallback за браузъри без decode API
             img.src = imageSrc;
           }
-        }
-      });
+        });
+      };
+
+      // Стартираме процеса
+      loadPriorityImage();
     };
 
     // Изпълняваме незабавно за критични изображения
     preloadImages();
 
-    // Допълнително можем да заредим и второстепенни ресурси когато браузърът е в idle състояние
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(() => {
-        // Тук можем да заредим допълнителни не-критични изображения
-      });
-    }
+    // Регистрираме handler за прозореца в случай, че размерът се промени
+    const handleResize = () => {
+      // При промяна на размера на прозореца, презареждаме изображенията
+      preloadImages();
+    };
+
+    // Премахваме throttling при размер на прозореца, за да сме сигурни, че изображенията ще се заредят правилно
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   // Този компонент не рендерира нищо във видимата част на DOM

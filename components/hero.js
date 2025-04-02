@@ -1,25 +1,9 @@
 import Link from "next/link";
-import StaticOptimizedImage from "./StaticOptimizedImage";
-import Head from "next/head";
 import LazyImageObserver from "./LazyImageObserver";
-import Image from "next/image";
 
 export default function Hero() {
   return (
     <>
-      <Head>
-        {/* Предварително зареждане на LCP изображението */}
-        <link rel="preload" as="image" href="/lawyer.webp" type="image/webp" />
-
-        {/* Preload мобилно изображение за устройства с малък екран */}
-        <link
-          rel="preload"
-          as="image"
-          href="/hero-image-mobile.jpg"
-          media="(max-width: 640px)"
-          type="image/jpg"
-        />
-      </Head>
       <LazyImageObserver />
       <div className="bg-white">
         {/* Мобилен Hero с изображение най-отгоре - ще бъде LCP елемент за мобилни */}
@@ -30,12 +14,17 @@ export default function Hero() {
               src="/hero-image-mobile.jpg"
               width={640}
               height={400}
-              alt=""
+              alt="Hero image"
               className="w-full h-auto object-cover aspect-[4/3]"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
               loading="eager"
-              style={{ objectFit: "cover" }}
+              style={{
+                objectFit: "cover",
+                contentVisibility: "auto",
+                containIntrinsicSize: "640px 400px",
+              }}
+              id="hero-mobile-lcp"
             />
           </div>
 
@@ -138,12 +127,17 @@ export default function Hero() {
               src="/hero-image-desktop.jpg"
               width={955}
               height={776}
-              alt=""
+              alt="Hero image"
               className="h-full w-full object-cover"
               fetchPriority="high"
-              decoding="async"
+              decoding="sync"
               loading="eager"
-              style={{ objectFit: "cover" }}
+              style={{
+                objectFit: "cover",
+                contentVisibility: "auto",
+                containIntrinsicSize: "955px 776px",
+              }}
+              id="hero-desktop-lcp"
             />
           </div>
         </div>
