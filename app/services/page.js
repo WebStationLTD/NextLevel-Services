@@ -1,6 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getServices } from "../../services/services";
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
+import Script from "next/script";
+
+// Динамично зареждане на компонента със списъка с услуги
+const ServicesList = dynamic(() => import("../../components/ServicesList"), {
+  ssr: true,
+  loading: () => (
+    <div className="animate-pulse h-96 bg-gray-100 rounded-md"></div>
+  ),
+});
 
 // Добавяне на ISR ревалидиране на всеки час
 export const revalidate = 3600;
@@ -8,7 +19,20 @@ export const revalidate = 3600;
 export const metadata = {
   title: "Услуги - NextLevel Theme",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "Разгледайте всички наши професионални услуги, които предлагаме за бизнеса. Открийте как можем да помогнем на вашия бизнес да расте и да се развива.",
+  keywords: ["услуги", "бизнес услуги", "професионални услуги", "NextLevel"],
+  openGraph: {
+    title: "Професионални Услуги | NextLevel Services",
+    description: "Разгледайте всички наши професионални услуги",
+    images: [
+      {
+        url: "/services-og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NextLevel Services",
+      },
+    ],
+  },
 };
 
 export default async function Services() {
@@ -23,8 +47,38 @@ export default async function Services() {
       );
     }
 
+    // Подготвяме структурирани данни за Schema.org
+    const servicesSchemaData = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: services.map((service, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Service",
+          name: service.title.rendered,
+          url: `https://example.bg/services/${service.slug}`,
+          description:
+            service.content.rendered.replace(/<[^>]+>/g, "").substring(0, 150) +
+            "...",
+          provider: {
+            "@type": "Organization",
+            name: "NextLevel Services",
+            url: "https://example.bg",
+          },
+        },
+      })),
+    };
+
     return (
       <>
+        <Script
+          id="services-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(servicesSchemaData),
+          }}
+        />
         <div className="bg-white">
           <div className="mx-auto max-w-10/10 py-0 sm:px-6 sm:py-0 lg:px-0">
             <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-12 text-center shadow-2xl sm:px-12">
@@ -60,62 +114,13 @@ export default async function Services() {
         </div>
         <div className="bg-white py-12 sm:py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto w-full">
-              <div className="flex flex-col mt-8 space-y-20 lg:mt-8 lg:space-y-20">
-                {services.map((service, index) => (
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="flex mt-8 mb-8 w-full max-w-full"
-                    key={service.id}
-                    prefetch={true}
-                  >
-                    <article className="relative isolate flex flex-col gap-8 lg:flex-row w-[100%]">
-                      <div className="relative aspect-video sm:aspect-2/1 lg:aspect-square lg:w-64 lg:shrink-0">
-                        <Image
-                          width={256}
-                          height={256}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          quality={85}
-                          priority={index === 0}
-                          loading={index === 0 ? "eager" : "lazy"}
-                          alt={service.title.rendered}
-                          src={
-                            service.yoast_head_json?.og_image?.[0]?.url ||
-                            "/placeholder.webp"
-                          }
-                          className="absolute inset-0 size-full rounded-2xl bg-gray-50 object-cover"
-                          format="webp"
-                        />
-                        <div className="absolute inset-0 rounded-2xl ring-1 ring-gray-900/10 ring-inset" />
-                      </div>
-                      <div className="flex flex-col w-full">
-                        <div className="flex items-center gap-x-4 text-xs">
-                          <time
-                            dateTime={service.date}
-                            className="text-gray-500"
-                          >
-                            {new Date(service.date).toLocaleDateString()}
-                          </time>
-                        </div>
-                        <div className="group relative max-w-[100%]">
-                          <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                            <span className="absolute inset-0" />
-                            {service.title.rendered}
-                          </h3>
-                          <p className="mt-5 text-md/6 text-gray-600">
-                            {service.content.rendered
-                              ? service.content.rendered
-                                  .replace(/<[^>]+>/g, "")
-                                  .substring(0, 450) + "..."
-                              : "Описание не е налично"}
-                          </p>
-                        </div>
-                      </div>
-                    </article>
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <Suspense
+              fallback={
+                <div className="animate-pulse h-96 bg-gray-100 rounded-md"></div>
+              }
+            >
+              <ServicesList services={services} />
+            </Suspense>
           </div>
         </div>
       </>

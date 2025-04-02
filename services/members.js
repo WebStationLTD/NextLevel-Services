@@ -1,12 +1,16 @@
 import { fetchAPI } from "./api";
+import { cache } from "react";
 
 /**
  * Get all members
  * @returns {Promise<Array>} - List of members
  */
-export const getMembers = async () => {
+export const getMembers = cache(async () => {
   const fetchedMembers = await fetchAPI(
-    "members?_fields=id,acf,slug&acf_format=standard"
+    "members?_fields=id,acf,slug&acf_format=standard",
+    {
+      next: { revalidate: 3600 },
+    }
   );
 
   return fetchedMembers.map((member) => ({
@@ -24,18 +28,21 @@ export const getMembers = async () => {
     slug: member.slug,
     profilepicture: member.acf?.profilepicture || "/placeholder.webp",
   }));
-};
+});
 
 /**
  * Get single member by slug
  * @param {string} slug - Member slug
  * @returns {Promise<Object|null>} - Member data
  */
-export const getMemberInfo = async (slug) => {
+export const getMemberInfo = cache(async (slug) => {
   // Fetch new data from API
   const data = await fetchAPI(
-    `members?slug=${slug}&_fields=acf&acf_format=standard`
+    `members?slug=${slug}&_fields=acf&acf_format=standard`,
+    {
+      next: { revalidate: 3600 },
+    }
   );
 
   return data && data.length > 0 ? data[0].acf : null;
-};
+});

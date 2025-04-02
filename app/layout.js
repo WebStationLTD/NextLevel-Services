@@ -10,7 +10,7 @@ import "../styles/globals.css";
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
   weight: ["400", "700"],
   style: ["normal", "italic"],
   display: "swap",
@@ -25,21 +25,24 @@ export async function generateMetadata() {
 
   return {
     metadataBase: new URL(`${protocol}://${host}`),
-    title: "Lorem ipsum dolor sit amet",
+    title: {
+      template: "%s | NextLevel Services",
+      default: "NextLevel Services | Професионални бизнес услуги",
+    },
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     openGraph: {
-      title: "Lorem ipsum dolor sit amet",
+      title: "NextLevel Services | Професионални бизнес услуги",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       images: "/lawyer.webp",
       type: "website",
       locale: "bg_BG",
-      siteName: "NextLevel Theme",
+      siteName: "NextLevel Services",
     },
     twitter: {
       card: "summary_large_image",
-      title: "NextLevel Theme",
+      title: "NextLevel Services",
       description: "Lorem ipsum dolor sit amet",
       images: ["/lawyer.webp"],
     },
