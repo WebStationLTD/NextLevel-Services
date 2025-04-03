@@ -81,7 +81,6 @@ export default function RootLayout({ children }) {
         {/* Директно използване на preload тагове с правилния синтаксис */}
         <link
           rel="preload"
-          // fetchpriority="high"
           as="image"
           href="/hero-image-mobile.jpg"
           type="image/jpg"
@@ -90,7 +89,6 @@ export default function RootLayout({ children }) {
 
         <link
           rel="preload"
-          fetchpriority="high"
           as="image"
           href="/hero-image-desktop.jpg"
           type="image/jpg"

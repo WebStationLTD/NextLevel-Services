@@ -131,6 +131,7 @@ export default function Hero() {
               className="h-full w-full object-cover"
               loading="eager"
               decoding="sync"
+              fetchPriority="high"
               style={{
                 objectFit: "cover",
                 contentVisibility: "auto",
