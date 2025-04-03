@@ -153,7 +153,7 @@ export default function Navigation() {
                 <Image
                   src="/next-level-logo.png"
                   alt=""
-                  width={120}
+                  width={180}
                   height={40}
                   className="h-10 w-auto"
                 />
@@ -247,11 +247,11 @@ export default function Navigation() {
                 <Link href="/" className="block">
                   <span className="sr-only">NextLevel Theme</span>
                   <Image
-                    width={385}
-                    height={106}
+                    width={180}
+                    height={40}
                     alt=""
                     src="/next-level-logo.png"
-                    className="h-10 w-auto transition-all duration-300 ease-in-out"
+                    className="w-auto transition-all duration-300 ease-in-out"
                   />
                 </Link>
               </div>
