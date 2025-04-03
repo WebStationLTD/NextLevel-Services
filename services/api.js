@@ -21,7 +21,22 @@ export const fetchAPI = cache(async (endpoint, options = {}) => {
       throw new Error(`API error: ${res.status} ${res.statusText}`);
     }
 
-    return await res.json();
+    const text = await res.text();
+
+    try {
+      // Опитваме се да парснем отговора като JSON
+      return JSON.parse(text);
+    } catch (parseError) {
+      // Ако получим HTML вместо JSON, хвърляме по-ясна грешка
+      if (text.includes("<br />") || text.includes("<html")) {
+        throw new Error(
+          `WordPress върна HTML вместо JSON: ${text.substring(0, 100)}...`
+        );
+      }
+      throw new Error(
+        `Failed to parse API response as JSON: ${parseError.message}`
+      );
+    }
   } catch (error) {
     console.error("Fetch API Error:", error);
     return null;
