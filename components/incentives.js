@@ -1,19 +1,19 @@
 const incentives = [
   {
     name: "Lorem ipsum 1",
-    imageSrc: "/icons/lawyer-1.svg",
+    imageSrc: "/icons/cta-icon-1.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     name: "Lorem ipsum 2",
-    imageSrc: "/icons/lawyer-2.svg",
+    imageSrc: "/icons/cta-icon-2.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
   {
     name: "Lorem ipsum 3",
-    imageSrc: "/icons/lawyer-3.svg",
+    imageSrc: "/icons/cta-icon-3.svg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
@@ -49,11 +49,11 @@ export default function Incentives() {
             {incentives.map((incentive) => (
               <div key={incentive.name} className="sm:flex lg:block">
                 <div className="sm:shrink-0">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#129160]">
+                  <div className="h-14 w-14 flex items-center justify-center rounded-full bg-[#129160]">
                     <img
                       alt=""
                       src={incentive.imageSrc}
-                      className="h-6 w-6"
+                      className="h-10 w-10"
                       style={{ filter: "brightness(0) invert(1)" }}
                     />
                   </div>
