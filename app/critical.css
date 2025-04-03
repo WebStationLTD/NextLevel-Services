@@ -34,21 +34,34 @@ h1 {
 }
 
 @media (min-width: 1024px) {
-  .lg\:absolute {
+  .lg\\:absolute {
     position: absolute;
   }
-
-  .lg\:inset-y-0 {
+  .lg\\:inset-y-0 {
     top: 0;
     bottom: 0;
   }
-
-  .lg\:right-0 {
+  .lg\\:right-0 {
     right: 0;
   }
-
-  .lg\:w-1\/2 {
+  .lg\\:w-1\\/2 {
     width: 50%;
+  }
+  .lg\\:hidden {
+    display: none;
+  }
+}
+
+.lg\\:block {
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .lg\\:hidden {
+    display: block;
+  }
+  .hidden.lg\\:block {
+    display: none;
   }
 }
 
@@ -56,7 +69,28 @@ h1 {
   object-fit: cover;
 }
 
+.w-full {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+.aspect-\\[4\\/3\\] {
+  aspect-ratio: 4/3;
+}
+
 img {
   opacity: 1;
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
+  display: block;
+}
+
+img[src] {
+  opacity: 1;
+}
+
+.h-full {
+  height: 100%;
 }
