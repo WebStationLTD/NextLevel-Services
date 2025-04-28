@@ -4,7 +4,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 
 const URL_FORM =
-  "https://nextlevel.rosset.website/wp-json/contact-form-7/v1/contact-forms/43/feedback";
+  "https://nextlevel.admin-panels.com/wp-json/contact-form-7/v1/contact-forms/43/feedback";
 
 export default function ContactForm() {
   const [errors, setErrors] = useState({});
