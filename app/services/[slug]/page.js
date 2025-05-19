@@ -133,7 +133,7 @@ export default async function ServicePage({ params }) {
           </div>
         </div>
         <div className="bg-white py-12 sm:py-12">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto w-full">
             <Suspense
               fallback={
                 <div className="animate-pulse h-96 bg-gray-100 rounded-md"></div>
